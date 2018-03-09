@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/bantu/ini-get-wrapper" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/google/recaptcha" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/guzzlehttp/ringphp" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/guzzlehttp/streams" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/ircmaxell/password-compat" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/lusitanian/oauth" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/marc1706/fast-image-size" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/ocramius/proxy-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/patchwork/utf8" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/s9e/text-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/config" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/dependency-injection" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/polyfill-php54" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/polyfill-php55" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/proxy-manager-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/twig-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/zendframework/zend-code" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/zendframework/zend-eventmanager" />
+      <excludeFolder url="file://$MODULE_DIR$/forum/vendor/zendframework/zend-stdlib" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
