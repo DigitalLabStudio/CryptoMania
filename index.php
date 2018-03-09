@@ -18,13 +18,13 @@ $rating_articles = R::find('articles', 'ORDER BY views DESC LIMIT 6');
     <link rel="stylesheet" href="css/bootstrap-css.css">
     <title>Криптомания</title>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-8334951718893703",
-          enable_page_level_ads: true
-     });
-</script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8334951718893703",
+            enable_page_level_ads: true
+        });
+    </script>
 
 </head>
 
@@ -36,19 +36,21 @@ $rating_articles = R::find('articles', 'ORDER BY views DESC LIMIT 6');
             <div class="row">
                 <div class="col-12 mb-4">
                     <h2 class="mb-3">Новые статьи</h2>
-                    <div class="list-group">
+                    <div class="card-deck">
                         <?php
                         foreach ($last_articles as $article) {
                             ?>
-                            <a href="pages/article.php?id=<?php echo $article['id'] ?>"
-                               class="list-group-item list-group-item-action flex-column align-items-start ">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1"><?php echo mb_substr($article['title'], 0, 40, 'utf-8') ?></h5>
+                            <a class="card" href="pages/article.php?id=<?php echo $article['id'] ?>">
+                                <img class="card-img-top" src="./article-img/<?php echo $article['img'] ?>"
+                                     alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo mb_substr($article['title'], 0, 40, 'utf-8') ?></h5>
+                                    <p class="card-text"><?php echo mb_substr(strip_tags($article['text']), 0, 94, 'utf-8') ?>
+                                        ...</p>
+                                </div>
+                                <div class="card-footer">
                                     <small><?php echo $article['date'] ?></small>
                                 </div>
-                                <p class="mb-1"><?php echo mb_substr(strip_tags($article['text']), 0, 94, 'utf-8') ?>
-                                    ...</p>
-                                <small>Автор: <?php echo $article['login'] ?></small>
                             </a>
                             <?php
                         }

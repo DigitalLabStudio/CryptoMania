@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="/css/bootstrap-css.css">
     <title>Криптомания</title>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-8334951718893703",
-          enable_page_level_ads: true
-     });
-</script>
-    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8334951718893703",
+            enable_page_level_ads: true
+        });
+    </script>
+
 </head>
 <body class="single-page">
 <?php
@@ -67,15 +67,15 @@ require "../header.php";
                                 <?php echo substr($article['text'], 0, 555) . "..."; ?>
                             </div>
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-8334951718893703"
-     data-ad-slot="8107576962"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                            <ins class="adsbygoogle"
+                                 style="display:block; text-align:center;"
+                                 data-ad-layout="in-article"
+                                 data-ad-format="fluid"
+                                 data-ad-client="ca-pub-8334951718893703"
+                                 data-ad-slot="8107576962"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
                         </div>
                     </article>
                 </a>

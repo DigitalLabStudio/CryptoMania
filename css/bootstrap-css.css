@@ -83,6 +83,13 @@ footer .list-group li {
   color: #303030;
 }
 
+.news .card {
+  min-width: 300px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  background-color:#423d3d;
+}
+
 .news-container .list-group,
 .list-donat {
   -webkit-flex-direction: row;
@@ -179,4 +186,32 @@ a:hover {
 
 .login-footer {
   margin-top: 100px;
+}
+
+.comments {
+  margin-bottom: 50px;
+  background-color: #fff;
+}
+
+.form-file {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-deck {
+  color: #fff;
+}
+
+.charity .container {
+  background-color: #fff;
+}
+
+.word-wrap {
+  word-wrap: break-word;
+}
+
+.card-img-top {
+  height: 232px;
 }

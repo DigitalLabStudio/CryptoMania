@@ -1,15 +1,26 @@
 <?php
 require '../include/db.php';
-
+$text = "";
 if (isset($_POST['submitarticle'])) {
 
-    if (isset($_POST['login']) && isset($_POST['email']) && strlen($_POST['category']) != 0 && isset($_POST['article']) && isset($_POST['title'])) {
-        $addArticle = R::dispense('articles');
+    if (isset($_POST['login']) && isset($_FILES['imgfile']) && !empty($_FILES['imgfile']['name'])  && isset($_POST['email']) && strlen($_POST['category']) != 0 && isset($_POST['article']) && isset($_POST['title'])) {
+         require '../include/add-img.php';
+        $result = upload_file($_FILES['imgfile']);
+        $img = 'null'; // В таблице поле должно иметь значение по умолчанию null
 
+        if(isset($result['error'])){
+            $error = $result['error'];
+        }else{
+            $img = '"'.$result['filename'].'"';
+        }
+
+        $addArticle = R::dispense('articles');
         $addArticle->title = $_POST['title'];
         $addArticle->text = $_POST['article'];
         $addArticle->login = $_POST['login'];
         $addArticle->article_category = $_POST['category'];
+        $addArticle->mail = $_POST['email'];
+        $addArticle->img = $result['filename'];
 
         $id = R::store($addArticle);
 
@@ -28,6 +39,7 @@ if (isset($_POST['submitarticle'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -40,15 +52,16 @@ if (isset($_POST['submitarticle'])) {
     <?php require "../header.php"; ?>
     <section class="container mb-5 mt-5">
         <h2>Добавить статью</h2>
-        <form method="post" action="add-article.php">
+        <?php echo $text; ?>
+        <form method="post" enctype="multipart/form-data" action="add-article.php">
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <input type="email" class="form-control" name="email"  required="required" placeholder="Email">
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <input type="login" name="login" class="form-control"  required="required" placeholder="Enter login">
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <select size="1" required="required" class="form-control" name="category">
                         <option selected disabled>Выберите категорию</option>
                         <option value="1">Блокчейн и криптовалюты</option>
@@ -57,6 +70,9 @@ if (isset($_POST['submitarticle'])) {
                         <option value="4">ICO</option>
                         <option value="5">Аналитика и прогнозы</option>
                     </select>
+                </div>
+                <div class="form-group form-file col-md-6">
+                    <input type="file" name="imgfile">
                 </div>
             </div>
             <div class="form-row">
