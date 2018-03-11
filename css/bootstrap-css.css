@@ -71,10 +71,6 @@ footer .list-group li {
   border-left-width: 0;
 }
 
-.news {
-  background: transparent url(https://madamemoneypenny.de/wp-content/uploads/pexels-photo-122458.jpeg) center center;
-}
-
 .news .list-group-item-action:hover {
   background-color: #2d2c2c;
 }
@@ -214,4 +210,13 @@ a:hover {
 
 .card-img-top {
   height: 232px;
+}
+
+.single-page .news {
+  padding-top: 20px;
+}
+
+.single-page .news .card {
+  margin-bottom: 20px;
+  max-width: 510px;
 }

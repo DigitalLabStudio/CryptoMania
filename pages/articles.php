@@ -23,10 +23,9 @@
 require "../include/db.php";
 require "../header.php";
 ?>
-<section class="container">
-    <div class="row">
+<section class="container news">
         <?php
-        $per_page = 5;
+        $per_page = 10;
         $page = 1;
         $category_array = ['blockchain_i_cryptovaluta' => 1,
             'mining' => 2,
@@ -49,39 +48,37 @@ require "../header.php";
         }
         $offset = (($per_page * $page) - $per_page);
         $articles = R::getAll("SELECT * FROM `articles` WHERE article_category=" . $category . " AND checked = true ORDER BY id DESC LIMIT " . $offset . ',' . $per_page);
-        foreach ($articles
-
-                 as $article) {
+        ?>
+        <div class="card-columns">
+        <?php
+        foreach ($articles as $article) {
             ?>
-            <div class="col-md-12">
-                <a href="article.php?id=<?php echo $article['id']; ?>">
-                    <article class="article">
-                        <div class="article-wrapper">
-                            <div class="article-data">
-                                <?php echo $article['date']; ?>
-                            </div>
-                            <h2 class="article-title text-center">
-                                <?php echo $article['title']; ?>
-                            </h2>
-                            <div class="article-content">
-                                <?php echo substr($article['text'], 0, 555) . "..."; ?>
-                            </div>
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 style="display:block; text-align:center;"
-                                 data-ad-layout="in-article"
-                                 data-ad-format="fluid"
-                                 data-ad-client="ca-pub-8334951718893703"
-                                 data-ad-slot="8107576962"></ins>
-                            <script>
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                        </div>
-                    </article>
-                </a>
-            </div>
+            <a class="card" href="article.php?id=<?php echo $article['id'] ?>">
+                <img class="card-img-top" src="../article-img/<?php echo $article['img'] ?>"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo mb_substr($article['title'], 0, 100, 'utf-8') ?></h5>
+                    <p class="card-text"><?php echo mb_substr(strip_tags($article['text']), 0, 94, 'utf-8') ?>
+                        ...</p>
+                </div>
+                <div class="card-footer">
+                    <small><?php echo $article['date'] ?></small>
+                </div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-8334951718893703"
+                     data-ad-slot="8107576962"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </a>
             <?php
-        }
+            } ?>
+    </div>
+        <?php
         echo '<div class="col-md-12"><nav><ul class="pagination">';
         if ($page > 1) {
             echo '<li class="page-item"><a class="page-link" href="articles.php?category_id=' . $category . '&page=' . ($page - 1) . '">&laquo Прошлая страница</a></li>';
@@ -91,7 +88,6 @@ require "../header.php";
         }
         echo '</ul></nav>'
         ?>
-    </div>
 </section>
 <?php require '../footer.php' ?>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

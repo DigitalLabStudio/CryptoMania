@@ -59,19 +59,21 @@ $rating_articles = R::find('articles', 'ORDER BY views DESC LIMIT 6');
                 </div>
                 <div class="col-12">
                     <h2 class="mb-3">Популярные статьи</h2>
-                    <div class="list-group">
+                    <div class="card-deck">
                         <?php
                         foreach ($rating_articles as $article) {
                             ?>
-                            <a href="pages/article.php?id=<?php echo $article['id'] ?>"
-                               class="list-group-item list-group-item-action flex-column align-items-start ">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1"><?php echo mb_substr(strip_tags($article['title']), 0, 40, 'utf-8') ?></h5>
+                            <a class="card" href="pages/article.php?id=<?php echo $article['id'] ?>">
+                                <img class="card-img-top" src="./article-img/<?php echo $article['img'] ?>"
+                                     alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo mb_substr($article['title'], 0, 40, 'utf-8') ?></h5>
+                                    <p class="card-text"><?php echo mb_substr(strip_tags($article['text']), 0, 94, 'utf-8') ?>
+                                        ...</p>
+                                </div>
+                                <div class="card-footer">
                                     <small><?php echo $article['date'] ?></small>
                                 </div>
-                                <p class="mb-1"><?php echo mb_substr(strip_tags($article['text']), 0, 94, 'utf-8') ?>
-                                    ...</p>
-                                <small>Автор: <?php echo $article['login'] ?></small>
                             </a>
                             <?php
                         }

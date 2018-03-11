@@ -24,7 +24,7 @@ if (isset($_POST['submitarticle'])) {
 
         $id = R::store($addArticle);
 
-        $text = "<span style='color:#333; font-size: 35px; line-height: 40px; margin: 10px;'>Your article was sent successfully !</span>";
+        $text = "<span style='color:green; font-size: 35px; line-height: 40px; margin: 10px;'>Your article was sent successfully !</span>";
     } else {
         $text = "<span style='color:red; font-size: 35px; line-height: 40px; magin: 10px;'>Error! Please try again.</span>";
     }

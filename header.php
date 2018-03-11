@@ -22,7 +22,7 @@
                     <a class="nav-link" href="/pages/articles.php?category=analitika_i_prognozy">Аналитика и прогнозы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Добро</a>
+                    <a class="nav-link" href="/pages/charity.php">Добро</a>
                 </li>
             </ul>
             <span class="navbar-text">
