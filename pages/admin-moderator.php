@@ -42,6 +42,7 @@ if (!isset($_SESSION['logged_user'])) {
             ?>
             <div class="col-md-12">
                 <article class="article">
+                    <img width="300" height="auto" src="../article-img/<?php echo $article['img']; ?>" alt="">
                     <div class="article-wrapper">
                         <div class="article-data">
                             <?php echo $article['date']; ?>

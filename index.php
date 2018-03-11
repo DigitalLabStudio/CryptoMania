@@ -28,7 +28,7 @@ $rating_articles = R::find('articles', 'ORDER BY views DESC LIMIT 6');
 
 </head>
 
-<body>
+<body class="main-page">
 <?php require "header.php"; ?>
 <main>
     <div class="news">

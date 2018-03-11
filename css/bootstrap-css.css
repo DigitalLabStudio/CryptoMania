@@ -144,12 +144,19 @@ a:hover {
   padding: 30px;
   background-color: #3b3333;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 
 .article-data {
   font-weight: bold;
   text-align: center;
+}
+
+.main-page .news {
+  background: transparent url(https://madamemoneypenny.de/wp-content/uploads/pexels-photo-122458.jpeg) repeat;
 }
 
 .single-page {

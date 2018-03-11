@@ -25,7 +25,8 @@ require "../header.php";
 ?>
 <section class="container news">
         <?php
-        $per_page = 10;
+        $advertising = true;
+        $per_page = 9;
         $page = 1;
         $category_array = ['blockchain_i_cryptovaluta' => 1,
             'mining' => 2,
@@ -64,6 +65,8 @@ require "../header.php";
                 <div class="card-footer">
                     <small><?php echo $article['date'] ?></small>
                 </div>
+                <?php if($advertising) { ?>
+                    <?php $advertising = false; ?>
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <ins class="adsbygoogle"
                      style="display:block; text-align:center;"
@@ -74,6 +77,9 @@ require "../header.php";
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
+                <?php } else {
+                    $advertising = true;
+                } ?>
             </a>
             <?php
             } ?>
